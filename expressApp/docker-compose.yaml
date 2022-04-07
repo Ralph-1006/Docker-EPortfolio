@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  frontend:
+    build: .
+    ports:
+      - 5000:5000
+  redisDB:
+    image: redis:7.0-rc2-alpine
+    volumes:
+      - redisVolume:/data
+
+volumes:
+  redisVolume:
